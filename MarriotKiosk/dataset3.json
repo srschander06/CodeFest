@@ -1,0 +1,199 @@
+//middle eastern business traveler - luxury
+{
+  "accountInfo": {
+    "memberId": "MB998621475",
+    "memberSince": "2016-02-04",
+    "username": "khalid.al-farsi.exec",
+    "email": "khalid.farsi@email.com",
+    "phone": "+971-50-555-9201",
+    "eliteStatus": "Ambassador Elite",
+    "lifetimeNights": 1124,
+    "currentYearNights": 142,
+    "pointsBalance": 854000
+  },
+
+  "personalInfo": {
+    "firstName": "Khalid",
+    "lastName": "Al-Farsi",
+    "dateOfBirth": "1975-05-27",
+    "address": {
+      "street": "Jumeirah Beach Road 109",
+      "city": "Dubai",
+      "state": "Dubai",
+      "zipCode": "00000",
+      "country": "United Arab Emirates"
+    },
+    "emergencyContact": {
+      "name": "Omar Al-Farsi",
+      "relationship": "Brother",
+      "phone": "+971-50-555-9202"
+    }
+  },
+
+  "roomPreferences": {
+    "bedType": "King",
+    "floorPreference": "High floor",
+    "roomLocation": "Quiet zone",
+    "viewPreference": "Ocean view",
+    "accessibilityNeeds": "Hearing accessible",
+    "pillowType": "Soft",
+    "roomTemperature": 72,
+    "minibar": "Stocked with sparkling water",
+    "entertainment": "Smart TV logged in",
+    "workspace": "Executive desk with printer"
+  },
+
+  "diningPreferences": {
+    "dietaryRestrictions": {
+      "allergies": ["None"],
+      "dietaryChoice": "Halal",
+      "medicalDiet": "Low sugar"
+    },
+    "cuisinePreferences": [
+      "Middle Eastern",
+      "Japanese",
+      "French",
+      "American Steakhouse"
+    ],
+    "breakfastStyle": "Buffet",
+    "diningStyle": "Fine dining",
+    "beveragePreferences": {
+      "coffee": "Turkish coffee",
+      "tea": "Mint tea",
+      "alcohol": "None"
+    },
+    "typicalDinnerTime": "21:00"
+  },
+
+  "servicePreferences": {
+    "communication": {
+      "primaryLanguage": "Arabic",
+      "secondaryLanguage": "English",
+      "contactMethod": "Phone",
+      "marketingOptIn": true,
+      "doNotDisturbHours": "23:30-07:30"
+    },
+    "housekeeping": {
+      "frequency": "Daily",
+      "preferredTime": "Afternoon (14-16pm)",
+      "turndownService": true,
+      "turndownTime": "21:00"
+    },
+    "newspaper": "Digital - Financial Times, Gulf News",
+    "wakeUpCall": true
+  },
+
+  "wellnessPreferences": {
+    "fitness": {
+      "preferredWorkoutTime": "06:30",
+      "fitnessClasses": ["Pilates", "Stretching"],
+      "equipmentFocus": "Cardio",
+      "personalTraining": "Interested"
+    },
+    "spa": {
+      "treatmentTypes": ["Massage", "Facial"],
+      "pressurePreference": "Medium",
+      "aromatherapy": "Oud",
+      "appointmentTime": "Evening"
+    }
+  },
+
+  "businessPreferences": {
+    "invoiceFormat": "Detailed",
+    "corporateCode": "ALFARSIHOLDINGS",
+    "companyName": "Al Farsi Holdings",
+    "meetingRoomSetup": "Conference",
+    "businessCenterNeeds": "Video conferencing"
+  },
+
+  "loyaltyPreferences": {
+    "pointRedemption": "Save for resort vacations",
+    "redemptionGoal": "Presidential Suite in Maldives",
+    "eliteBenefitPriority": "Suite upgrades",
+    "airlinePartner": "Emirates",
+    "carRentalPartner": "Hertz",
+    "bonusOfferInterests": ["Luxury stays", "Spa", "Dining"]
+  },
+
+  "transportationPreferences": {
+    "airportTransfer": "Private limousine",
+    "transferTiming": 45,
+    "specialNeeds": "Privacy partition",
+    "rentalCarCompany": "Hertz",
+    "rentalCarType": "Luxury sedan",
+    "parkingPreference": "Valet",
+    "evCharging": false
+  },
+
+  "specialOccasions": {
+    "importantDates": [
+      {
+        "type": "Anniversary",
+        "date": "05-27",
+        "celebrationStyle": "Elegant private dinner"
+      }
+    ],
+    "welcomeAmenity": "Premium dates and Arabic coffee set",
+    "musicPreference": "Classical Arabic, Instrumental",
+    "lightingPreference": "Warm ambient",
+    "scentPreference": "Oud"
+  },
+
+  "travelCompanions": {
+    "frequentCompanions": [
+      {
+        "name": "Fatima Al-Farsi",
+        "relationship": "Spouse",
+        "memberId": "MB998621476"
+      }
+    ],
+    "childrenAges": [12, 9],
+    "connectingRooms": true,
+    "petFriendly": false
+  },
+
+  "culturalPreferences": {
+    "prayerMat": true,
+    "qiblaDirection": true,
+    "sabbathObservance": false,
+    "culturalAmenities": "Arabic TV channels"
+  },
+
+  "technologyPreferences": {
+    "mobileKey": true,
+    "digitalCheckIn": false,
+    "appNotifications": ["Points activity", "Stay updates"],
+    "smartRoomControls": "Voice-activated",
+    "wifiAutoConnect": true,
+    "typicalDeviceCount": 5,
+    "streamingServices": ["Netflix", "YouTube"]
+  },
+
+  "recentStays": [
+    {
+      "property": "Ritz-Carlton Doha",
+      "checkIn": "2025-09-02",
+      "checkOut": "2025-09-06",
+      "roomType": "Club King Suite",
+      "rating": 5
+    },
+    {
+      "property": "JW Marriott Marquis Dubai",
+      "checkIn": "2025-07-10",
+      "checkOut": "2025-07-13",
+      "roomType": "Premier Executive Suite",
+      "rating": 5
+    }
+  ],
+
+  "upcomingReservations": [
+    {
+      "confirmationNumber": "MR89472031",
+      "property": "St. Regis Maldives Vommuli Resort",
+      "checkIn": "2025-12-18",
+      "checkOut": "2025-12-25",
+      "roomType": "Overwater Villa with Pool",
+      "specialRequests": "Private dinner setup, Arabic amenities"
+    }
+  ]
+}
