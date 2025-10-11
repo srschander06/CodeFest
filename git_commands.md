@@ -32,3 +32,20 @@ git push origin branch_name (never main)
 then lastly 
 
 git commit -m "your message"
+<<<<<<< HEAD
+=======
+
+to fetch changes
+
+# First fetch the latest
+git fetch origin
+
+# Checkout Sanjay's branch
+git checkout sanjay
+
+# Merge or copy your changes
+git merge ben
+
+# Push to Sanjay's branch
+git push origin sanjay
+>>>>>>> sanj
