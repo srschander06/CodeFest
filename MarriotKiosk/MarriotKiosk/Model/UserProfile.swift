@@ -47,7 +47,7 @@ extension DateFormatter {
 // MARK: - Loader
 func loadUserProfile() -> UserProfile? {
     guard let url = Bundle.main.url(forResource: "UserData", withExtension: "json") else {
-        print("❌ JSON file not found in bundle.")
+        print("JSON file not found in bundle.")
         return nil
     }
 
@@ -56,10 +56,10 @@ func loadUserProfile() -> UserProfile? {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .formatted(DateFormatter.yyyyMMdd)
         let profile = try decoder.decode(UserProfile.self, from: data)
-        print("✅ Successfully loaded user: \(profile.name)")
+        print("Successfully loaded user: \(profile.name)")
         return profile
     } catch {
-        print("❌ Failed to decode UserProfile:", error)
+        print("Failed to decode UserProfile:", error)
         return nil
     }
 }
