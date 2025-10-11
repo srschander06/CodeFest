@@ -1,4 +1,0 @@
-
-exa-py
-python-dotenv
-google-generativeai
