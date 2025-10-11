@@ -1,1 +1,1 @@
-print('fortnite')
+print('fortnite yolo')
