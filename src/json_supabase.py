@@ -8,8 +8,7 @@ sb: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 def to_date(s: str | None) -> str | None:
     if not s:
         return None
-    # Accept "YYYY-MM-DD"
-    return s
+    return s  # expects "YYYY-MM-DD"
 
 def upsert_member(payload: dict):
     acc = payload["accountInfo"]
@@ -30,6 +29,7 @@ def upsert_member(payload: dict):
         "points_balance":      acc.get("pointsBalance"),
         "address":             person.get("address"),
         "emergency_contact":   person.get("emergencyContact"),
+
         "room_preferences":          payload.get("roomPreferences"),
         "dining_preferences":        payload.get("diningPreferences"),
         "service_preferences":       payload.get("servicePreferences"),
@@ -41,6 +41,9 @@ def upsert_member(payload: dict):
         "travel_companions_meta":    payload.get("travelCompanions"),
         "cultural_preferences":      payload.get("culturalPreferences"),
         "technology_preferences":    payload.get("technologyPreferences"),
+
+        # NEW: store the whole attractions block
+        "attraction_preferences":    payload.get("attractionPreferences"),
     }
 
     # Upsert members
@@ -48,7 +51,7 @@ def upsert_member(payload: dict):
 
     member_id = acc["memberId"]
 
-    # Refresh child tables: simple approach = delete + insert (idempotent for demos)
+    # Child tables (keep if you created them; otherwise remove this section)
     sb.table("travel_companions").delete().eq("member_id", member_id).execute()
     for c in payload.get("travelCompanions", {}).get("frequentCompanions", []):
         sb.table("travel_companions").insert({
@@ -82,14 +85,25 @@ def upsert_member(payload: dict):
         }).execute()
 
 def get_member(member_id: str) -> dict:
-    # Join with child tables for a hydrated view
-    member = sb.table("members").select("*").eq("member_id", member_id).single().execute().data
+    # Hydrated view + attractions block
+    member = sb.table("members").select(
+        "member_id, first_name, last_name, email, elite_status, points_balance, "
+        "attraction_preferences, room_preferences, dining_preferences, service_preferences, "
+        "wellness_preferences, business_preferences, loyalty_preferences, "
+        "transportation_preferences, special_occasions, travel_companions_meta, "
+        "cultural_preferences, technology_preferences, address, emergency_contact"
+    ).eq("member_id", member_id).single().execute().data
+
     companions = sb.table("travel_companions").select("*").eq("member_id", member_id).execute().data
     stays = sb.table("recent_stays").select("*").eq("member_id", member_id).order("check_in", desc=True).execute().data
     upcoming = sb.table("upcoming_reservations").select("*").eq("member_id", member_id).order("check_in").execute().data
+
     return {
         "member": member,
         "companions": companions,
         "recentStays": stays,
-        "upcomingReservations": upcoming
+        "upcomingReservations": upcoming,
+        # Convenience passthrough:
+        "attractionPreferences": (member or {}).get("attraction_preferences"),
     }
+

@@ -64,6 +64,19 @@
     "typicalDinnerTime": "19:00"
   },
 
+  "attractionPreferences": {
+    "vibe": { "tier": "Premium", "energy": "Relaxed" },
+    "group": "Couple",
+    "kidFriendly": false,
+    "awakeSleep": { "awakeAt": "06:00", "sleepAt": "22:00" },
+    "travel": { "mode": "Drive", "maxMinutes": 40 },
+    "socialSetting": "Quiet/Private",
+    "activitiesHobbies": ["Modern art", "Architecture tours", "Photography walks", "Planetariums", "Scenic viewpoints"],
+    "favoriteMusicGenres": ["Jazz", "Classical/Chamber"],
+    "wellnessActivity": ["Yoga/Pilates", "Spa/Thermal", "Easy Walks/Scenic"],
+    "languages": ["English", "Mandarin"]
+  },  
+
   "servicePreferences": {
     "communication": {
       "primaryLanguage": "English",
