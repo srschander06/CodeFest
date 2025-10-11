@@ -6,7 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		BE4A68EC2E9AA4DD009CC93F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BE4A68EB2E9AA4DD009CC93F /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		BE4A68EB2E9AA4DD009CC93F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BEF0D7082E9A1AE300E4D565 /* MarriotKiosk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarriotKiosk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -32,6 +37,7 @@
 		BEF0D6FF2E9A1AE300E4D565 = {
 			isa = PBXGroup;
 			children = (
+				BE4A68EB2E9AA4DD009CC93F /* README.md */,
 				BEF0D70A2E9A1AE300E4D565 /* MarriotKiosk */,
 				BEF0D7092E9A1AE300E4D565 /* Products */,
 			);
@@ -109,6 +115,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE4A68EC2E9AA4DD009CC93F /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +263,7 @@
 				DEVELOPMENT_TEAM = 9S67Y6QRQ2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location to show nearby experiences and amenities.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -288,6 +296,7 @@
 				DEVELOPMENT_TEAM = 9S67Y6QRQ2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location to show nearby experiences and amenities.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
