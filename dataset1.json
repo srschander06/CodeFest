@@ -1,0 +1,205 @@
+{
+  "accountInfo": {
+    "memberId": "MB675342908",
+    "memberSince": "2019-08-12",
+    "username": "james.patel.explorer",
+    "email": "james.patel@email.com",
+    "phone": "+1-310-555-0293",
+    "eliteStatus": "Titanium Elite",
+    "lifetimeNights": 612,
+    "currentYearNights": 78,
+    "pointsBalance": 389200
+  },
+
+  "personalInfo": {
+    "firstName": "James",
+    "lastName": "Patel",
+    "dateOfBirth": "1983-11-04",
+    "address": {
+      "street": "1124 Venice Blvd",
+      "city": "Los Angeles",
+      "state": "California",
+      "zipCode": "90034",
+      "country": "United States"
+    },
+    "emergencyContact": {
+      "name": "Alicia Patel",
+      "relationship": "Partner",
+      "phone": "+1-310-555-0294"
+    }
+  },
+
+  "roomPreferences": {
+    "bedType": "Queen",
+    "floorPreference": "Low floor",
+    "roomLocation": "Near fitness center",
+    "viewPreference": "Ocean view",
+    "accessibilityNeeds": "Grab bars",
+    "pillowType": "Hypoallergenic",
+    "roomTemperature": 70,
+    "minibar": "Stocked",
+    "entertainment": "Premium channels",
+    "workspace": "Standing desk"
+  },
+
+  "diningPreferences": {
+    "dietaryRestrictions": {
+      "allergies": ["Dairy"],
+      "dietaryChoice": "Vegetarian",
+      "medicalDiet": "Low sodium"
+    },
+    "cuisinePreferences": [
+      "Indian",
+      "Thai",
+      "Mexican",
+      "French"
+    ],
+    "breakfastStyle": "American",
+    "diningStyle": "Casual",
+    "beveragePreferences": {
+      "coffee": "Espresso, almond milk",
+      "tea": "Chai",
+      "alcohol": "Craft beer, red wine"
+    },
+    "typicalDinnerTime": "20:00"
+  },
+
+  "servicePreferences": {
+    "communication": {
+      "primaryLanguage": "English",
+      "secondaryLanguage": "Hindi",
+      "contactMethod": "In-app only",
+      "marketingOptIn": false,
+      "doNotDisturbHours": "23:00-06:00"
+    },
+    "housekeeping": {
+      "frequency": "Every other day",
+      "preferredTime": "Afternoon (12-3pm)",
+      "turndownService": false,
+      "turndownTime": null
+    },
+    "newspaper": "Physical - Financial Times",
+    "wakeUpCall": true
+  },
+
+  "wellnessPreferences": {
+    "fitness": {
+      "preferredWorkoutTime": "07:30",
+      "fitnessClasses": ["Spinning", "HIIT"],
+      "equipmentFocus": "Weights",
+      "personalTraining": "Not interested"
+    },
+    "spa": {
+      "treatmentTypes": ["Body scrub", "Hot stone massage"],
+      "pressurePreference": "Deep",
+      "aromatherapy": "Eucalyptus",
+      "appointmentTime": "Afternoon"
+    }
+  },
+
+  "businessPreferences": {
+    "invoiceFormat": "Summary",
+    "corporateCode": "INNOVX2025",
+    "companyName": "InnovateX Technologies",
+    "meetingRoomSetup": "Boardroom",
+    "businessCenterNeeds": "Copying"
+  },
+
+  "loyaltyPreferences": {
+    "pointRedemption": "Auto-redeem for free nights",
+    "redemptionGoal": "Family trip to Hawaii",
+    "eliteBenefitPriority": "Early check-in",
+    "airlinePartner": "Delta Airlines",
+    "carRentalPartner": "Avis",
+    "bonusOfferInterests": ["Experiences", "Dining"]
+  },
+
+  "transportationPreferences": {
+    "airportTransfer": "Ride-share (Uber)",
+    "transferTiming": 20,
+    "specialNeeds": "Extra luggage space",
+    "rentalCarCompany": "Avis",
+    "rentalCarType": "Compact",
+    "parkingPreference": "Self-park",
+    "evCharging": true
+  },
+
+  "specialOccasions": {
+    "importantDates": [
+      {
+        "type": "Birthday",
+        "date": "11-04",
+        "celebrationStyle": "Private"
+      }
+    ],
+    "welcomeAmenity": "Fruit basket",
+    "musicPreference": "Lo-fi, Acoustic",
+    "lightingPreference": "Natural light",
+    "scentPreference": "Citrus"
+  },
+
+  "travelCompanions": {
+    "frequentCompanions": [
+      {
+        "name": "Alicia Patel",
+        "relationship": "Partner",
+        "memberId": "MB675342909"
+      }
+    ],
+    "childrenAges": [8],
+    "connectingRooms": false,
+    "petFriendly": true
+  },
+
+  "culturalPreferences": {
+    "prayerMat": false,
+    "qiblaDirection": false,
+    "sabbathObservance": false,
+    "culturalAmenities": "None"
+  },
+
+  "technologyPreferences": {
+    "mobileKey": true,
+    "digitalCheckIn": true,
+    "appNotifications": ["Stay updates", "Promotions"],
+    "smartRoomControls": "Manual",
+    "wifiAutoConnect": true,
+    "typicalDeviceCount": 4,
+    "streamingServices": ["Disney+", "HBO Max"]
+  },
+
+  "recentStays": [
+    {
+      "property": "Marriott Waikiki Beach Resort",
+      "checkIn": "2025-08-12",
+      "checkOut": "2025-08-18",
+      "roomType": "Oceanfront Queen Suite",
+      "rating": 5
+    },
+    {
+      "property": "Sheraton Grand Chicago",
+      "checkIn": "2025-05-03",
+      "checkOut": "2025-05-07",
+      "roomType": "Deluxe Queen",
+      "rating": 4
+    },
+    {
+      "property": "Westin Seattle",
+      "checkIn": "2025-03-15",
+      "checkOut": "2025-03-17",
+      "roomType": "Corner King Room",
+      "rating": 4
+    }
+  ],
+
+  "upcomingReservations": [
+    {
+      "confirmationNumber": "MR73849105",
+      "property": "St. Regis Bora Bora Resort",
+      "checkIn": "2025-12-02",
+      "checkOut": "2025-12-09",
+      "roomType": "Overwater Villa",
+      "specialRequests": "Romantic turndown, sunset dinner setup"
+    }
+  ]
+}
