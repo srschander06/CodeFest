@@ -1,0 +1,187 @@
+// more eco consicious traveler
+{
+  "accountInfo": {
+    "memberId": "MB559874213",
+    "memberSince": "2021-05-10",
+    "username": "lena.hoffman.nomad",
+    "email": "lena.hoffman@email.com",
+    "phone": "+49-171-555-8421",
+    "eliteStatus": "Gold Elite",
+    "lifetimeNights": 183,
+    "currentYearNights": 34,
+    "pointsBalance": 94500
+  },
+
+  "personalInfo": {
+    "firstName": "Lena",
+    "lastName": "Hoffman",
+    "dateOfBirth": "1990-01-18",
+    "address": {
+      "street": "Karl-Marx-Str. 22",
+      "city": "Berlin",
+      "state": "Berlin",
+      "zipCode": "12043",
+      "country": "Germany"
+    },
+    "emergencyContact": {
+      "name": "Erik Schmidt",
+      "relationship": "Brother",
+      "phone": "+49-171-555-8422"
+    }
+  },
+
+  "roomPreferences": {
+    "bedType": "Double",
+    "floorPreference": "High floor",
+    "roomLocation": "Corner room",
+    "viewPreference": "Garden view",
+    "accessibilityNeeds": "None",
+    "pillowType": "Firm",
+    "roomTemperature": 66,
+    "minibar": "Empty for personal use",
+    "entertainment": "Smart TV logged in",
+    "workspace": "Minimal desk"
+  },
+
+  "diningPreferences": {
+    "dietaryRestrictions": {
+      "allergies": ["None"],
+      "dietaryChoice": "Vegan",
+      "medicalDiet": "None"
+    },
+    "cuisinePreferences": [
+      "Mediterranean",
+      "Japanese",
+      "Plant-based",
+      "Scandinavian"
+    ],
+    "breakfastStyle": "Buffet",
+    "diningStyle": "Room service",
+    "beveragePreferences": {
+      "coffee": "Cold brew, oat milk",
+      "tea": "Chamomile",
+      "alcohol": "Kombucha, mocktails only"
+    },
+    "typicalDinnerTime": "18:30"
+  },
+
+  "servicePreferences": {
+    "communication": {
+      "primaryLanguage": "German",
+      "secondaryLanguage": "English",
+      "contactMethod": "Email",
+      "marketingOptIn": false,
+      "doNotDisturbHours": "21:00-06:00"
+    },
+    "housekeeping": {
+      "frequency": "On request only",
+      "preferredTime": "Morning (8-10am)",
+      "turndownService": false,
+      "turndownTime": null
+    },
+    "newspaper": "Digital - The Guardian",
+    "wakeUpCall": false
+  },
+
+  "wellnessPreferences": {
+    "fitness": {
+      "preferredWorkoutTime": "07:00",
+      "fitnessClasses": ["Yoga"],
+      "equipmentFocus": "Cardio",
+      "personalTraining": "Not interested"
+    },
+    "spa": {
+      "treatmentTypes": ["Massage"],
+      "pressurePreference": "Light",
+      "aromatherapy": "Peppermint",
+      "appointmentTime": "Morning"
+    }
+  },
+
+  "businessPreferences": {
+    "invoiceFormat": "Digital only",
+    "corporateCode": "",
+    "companyName": "Freelance Designer",
+    "meetingRoomSetup": "N/A",
+    "businessCenterNeeds": "Wi-Fi access"
+  },
+
+  "loyaltyPreferences": {
+    "pointRedemption": "Save for eco-resorts",
+    "redemptionGoal": "Stay at LEED-certified hotels",
+    "eliteBenefitPriority": "Late checkout",
+    "airlinePartner": "Lufthansa",
+    "carRentalPartner": "Sixt",
+    "bonusOfferInterests": ["Sustainability", "Experiences"]
+  },
+
+  "transportationPreferences": {
+    "airportTransfer": "Shared shuttle",
+    "transferTiming": 15,
+    "specialNeeds": "None",
+    "rentalCarCompany": "Sixt",
+    "rentalCarType": "Hybrid",
+    "parkingPreference": "Bicycle storage",
+    "evCharging": true
+  },
+
+  "specialOccasions": {
+    "importantDates": [],
+    "welcomeAmenity": "Vegan snacks",
+    "musicPreference": "Ambient, Nature sounds",
+    "lightingPreference": "Natural light",
+    "scentPreference": "Fragrance-free"
+  },
+
+  "travelCompanions": {
+    "frequentCompanions": [],
+    "childrenAges": [],
+    "connectingRooms": false,
+    "petFriendly": true
+  },
+
+  "culturalPreferences": {
+    "prayerMat": false,
+    "qiblaDirection": false,
+    "sabbathObservance": false,
+    "culturalAmenities": "Eco toiletries only"
+  },
+
+  "technologyPreferences": {
+    "mobileKey": true,
+    "digitalCheckIn": true,
+    "appNotifications": ["Stay updates"],
+    "smartRoomControls": "Voice-activated",
+    "wifiAutoConnect": true,
+    "typicalDeviceCount": 2,
+    "streamingServices": ["Spotify"]
+  },
+
+  "recentStays": [
+    {
+      "property": "AC Hotel Barcelona Forum",
+      "checkIn": "2025-09-10",
+      "checkOut": "2025-09-14",
+      "roomType": "Standard Double with Balcony",
+      "rating": 5
+    },
+    {
+      "property": "Moxy Vienna Airport",
+      "checkIn": "2025-07-01",
+      "checkOut": "2025-07-02",
+      "roomType": "Queen Room",
+      "rating": 4
+    }
+  ],
+
+  "upcomingReservations": [
+    {
+      "confirmationNumber": "MR67582941",
+      "property": "Marriott Kigali Eco Resort",
+      "checkIn": "2025-11-20",
+      "checkOut": "2025-11-27",
+      "roomType": "Eco Deluxe Suite",
+      "specialRequests": "Sustainable room setup, reusable water bottles only"
+    }
+  ]
+}
