@@ -130,4 +130,8 @@ def fake_llm_response(prompt: str) -> str:
 
 if __name__ == "__main__":
     import uvicorn
+<<<<<<< HEAD
     uvicorn.run("server:app", host="0.0.0.0", port=8000, reload=True)
+=======
+    uvicorn.run("server:app", host="0.0.0.0", port=8000, reload=True)
+>>>>>>> adc1b0126e9876ddeaf4e8e752515a3d07d6fb3e

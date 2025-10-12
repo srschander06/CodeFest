@@ -12,7 +12,7 @@ import SwiftData
 struct MarriotKioskApp: App {
     var body: some Scene {
         WindowGroup {
-            RootTabView()
+            MapDashboardView()
             
             .preferredColorScheme(.light)
         }

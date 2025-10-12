@@ -83,4 +83,8 @@ resp_aes_key = user_priv.decrypt(
 
 aesgcm_resp = AESGCM(resp_aes_key)
 plaintext = aesgcm_resp.decrypt(resp_iv, resp_ct, associated_data=None)
+<<<<<<< HEAD
 print("LLM reply:", plaintext.decode("utf8"))
+=======
+print("LLM reply:", plaintext.decode("utf8"))
+>>>>>>> adc1b0126e9876ddeaf4e8e752515a3d07d6fb3e
