@@ -2,3 +2,5 @@
 exa-py
 python-dotenv
 google-generativeai
+requests
+supabase
