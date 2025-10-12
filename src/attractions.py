@@ -60,14 +60,82 @@ class AttractionsAgent:
             return []
 
     def _build_search_query(self, prefs):
-        # translate user prefs into an Exa search query for **attractions**
-        query_parts = [f"top rated attractions in {self.location}"]
-        # (left logic as-is; prefs may not include these keys, that's fine)
-        if cuisines := prefs.get('cuisinePreferences'):
-            query_parts.append(f"({ ' OR '.join(cuisines) })")
-        if (restrictions := prefs.get('dietaryRestrictions')) and (choice := restrictions.get('dietaryChoice')) != 'None':
-            query_parts.append(f"with '{choice} menu'")
-        return ' '.join(query_parts)
+        """ Build an Exa query for attractions using attractionPreferences.
+        Narrows by hobbies, music, social setting, travel mode, vibe tier,
+        group/kid-friendly, languages, and wellness interests.
+        """
+
+        parts = [f"top rated attractions AND things to do in {self.location}"]
+
+        # 1) Activities / hobbies steer category (e.g., Modern art, Planetariums, Scenic viewpoints)
+        activities = prefs.get("activitiesHobbies") or []
+        if activities:
+            parts.append("(" + " OR ".join(activities) + ")")
+
+        # 2) Music genres hint live-arts venues at night (jazz clubs, classical concerts)
+        genres = prefs.get("favoriteMusicGenres") or []
+        if genres:
+            mapped = []
+            for g in genres:
+                gl = (g or "").lower()
+                if "jazz" in gl:
+                    mapped += ["jazz club", "live jazz", "jazz lounge"]
+                elif "classical" in gl or "chamber" in gl:
+                    mapped += ["classical concert", "symphony", "chamber music", "recital"]
+                else:
+                    mapped.append(f"live {g}")
+            if mapped:
+                parts.append("(" + " OR ".join(mapped) + ")")
+
+        # 3) Social setting (quiet/private vs lively/crowded)
+        social = prefs.get("socialSetting")
+        if social == "Quiet/Private":
+            parts.append("(private tour OR small group OR timed entry OR skip-the-line OR reservation required)")
+        elif social == "Lively/Crowded":
+            parts.append("(popular landmark OR festival OR live event OR bustling)")
+
+        # 4) Travel mode hints (walk vs drive)
+        travel = prefs.get("travel") or {}
+        mode = (travel.get("mode") or "").lower()
+        if mode == "walk":
+            parts.append("(walkable OR near downtown OR city center)")
+        elif mode == "drive":
+            parts.append("(on-site parking OR valet parking)")
+
+        # 5) Vibe tier → premium/curated
+        tier = (prefs.get("vibe") or {}).get("tier")
+        if tier in {"Premium", "Luxury"}:
+            parts.append("(premium OR VIP OR exclusive OR curated OR private guide)")
+
+        # 6) Group & kid-friendly (quick disambiguation)
+        group = prefs.get("group")
+        kid_friendly = prefs.get("kidFriendly")
+        if group == "Couple":
+            parts.append("(romantic OR sunset viewpoint OR intimate)")
+        if kid_friendly is True:
+            parts.append("(family-friendly OR kids museum OR interactive science center)")
+        elif kid_friendly is False:
+            parts.append("(adults only OR after-hours museum OR evening concert)")
+
+        # 7) Languages → tours/audio guides in user's languages (any language)
+        langs = [l for l in (prefs.get("languages") or []) if isinstance(l, str) and l.strip()]
+        if langs:
+            lang_terms = []
+            for lang in langs:
+                L = lang.strip()
+                lang_terms.append(
+                    f'("{L} audio guide" OR "{L} guided tour" OR "{L}-language tour" OR "tours in {L}" OR "{L} commentary")'
+                )
+            parts.append("(" + " OR ".join(lang_terms) + ")")
+
+        # 8) Wellness interests (yoga/pilates, spa/thermal, easy scenic walks, boat cruises)
+        wellness = prefs.get("wellnessActivity") or []
+        if wellness:
+            parts.append("(" + " OR ".join(wellness) + ")")
+
+        # Note: awakeSleep (awakeAt/sleepAt) is better enforced in ranking, not search.
+
+        return " ".join(parts)
 
     def _build_llm_prompt(self, contents, prefs):
         # build a single prompt asking for **attraction** recs in strict JSON
