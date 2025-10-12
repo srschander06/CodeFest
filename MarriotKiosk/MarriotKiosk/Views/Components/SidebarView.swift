@@ -33,6 +33,7 @@ struct SidebarView: View {
                     HStack {
                         Image(systemName: "magnifyingglass")
                         TextField("Search nearby places", text: $searchModel.query)
+                           
                             .textInputAutocapitalization(.words)
                             .disableAutocorrection(true)
                             .onSubmit { searchModel.search() }

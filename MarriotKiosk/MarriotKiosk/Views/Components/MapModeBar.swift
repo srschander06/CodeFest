@@ -30,8 +30,10 @@ struct MapModeBar: View {
                             : Color.clear
                         )
                         .clipShape(Capsule())
+                        .glassEffect()
                 }
                 .buttonStyle(.plain)
+                .glassEffect()
             }
         }
         .padding(.horizontal, 20)

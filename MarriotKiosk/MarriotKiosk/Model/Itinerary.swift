@@ -4,7 +4,7 @@
 //
 //  Created by Aryan Palit on 10/12/25.
 //
-
+/*
 
 import Foundation
 import FoundationModels
@@ -15,7 +15,7 @@ struct Itinerary: Codable, Equatable, Sendable {
     var id: UUID = .init()
     @Guide(description: "Exciting name for a single day Blacksburg trip Itinerary")
     var title: String
-    @Guide(.anyOf(landmark.lan))
+  
     var destinationName: String
     var description: String
     var rationale: String
@@ -54,3 +54,4 @@ enum ActivityType: String, Codable, Sendable, CaseIterable {
     case leisure
     case transportation
 }
+*/
