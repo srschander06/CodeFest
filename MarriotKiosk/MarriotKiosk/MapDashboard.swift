@@ -8,19 +8,32 @@
 import SwiftUI
 import MapKit
 
+enum MapStyleOption: String, CaseIterable, Identifiable {
+    case standard = "Standard"
+    case satellite = "Satellite"
+    case hybrid3D = "3D"
+
+    var id: String { rawValue }
+}
+
 struct MapDashboardView: View {
     // MARK: - State
     @State private var user: UserProfile? = nil
+    @State private var mapView = MKMapView()
+    @State private var recenterTrigger = false
+    @State private var mapStyle: MapStyleOption = .standard
 
-    // Approximate coordinate for Courtyard by Marriott Blacksburg
-    private let hotelCoordinate = CLLocationCoordinate2D(latitude: 37.2298, longitude: -80.4275)
-    private let guestCoordinate = CLLocationCoordinate2D(latitude: 37.2298, longitude: -80.4275)
+    private let hotelCoordinate = CLLocationCoordinate2D(latitude: 37.19928, longitude: -80.40117)
+    private let guestCoordinate = CLLocationCoordinate2D(latitude: 37.19928, longitude: -80.40117)
 
     var body: some View {
         ZStack(alignment: .topLeading) {
-            // MARK: - Map Layer (UIKit)
-            MapView(center: hotelCoordinate,
-                           guestCoordinate: guestCoordinate)
+            // MARK: - Map Layer
+            MapViewWrapper(mapView: $mapView,
+                           center: hotelCoordinate,
+                           guestCoordinate: guestCoordinate,
+                           recenterTrigger: $recenterTrigger,
+                           mapStyle: $mapStyle)
                 .ignoresSafeArea()
 
             // MARK: - Sidebar
@@ -32,46 +45,39 @@ struct MapDashboardView: View {
                 Spacer()
             }
 
-            // MARK: - Top Bar
-            VStack {
-                if let user {
-                    topBar(for: user)
-                        .frame(maxWidth: .infinity)
-                        .padding(.top, 20)
-                } else {
-                    ProgressView("Loading profile…")
-                        .padding(.top, 50)
+            // MARK: - Top Controls
+            VStack(spacing: 12) {
+                MapModeBar(selectedStyle: $mapStyle)
+                    .padding(.top, 20)
+
+                HStack {
+                    Spacer()
+                    Button {
+                        withAnimation(.snappy) {
+                            recenterTrigger.toggle()
+                            UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                        }
+                    } label: {
+                        Label("Recenter", systemImage: "location.fill")
+                            .labelStyle(.iconOnly)
+                            .font(.title2.bold())
+                            .padding(12)
+                            .background(.ultraThinMaterial, in: Circle())
+                            .shadow(radius: 3)
+                    }
+                    .padding(.trailing, 20)
+                    .padding(.top, 5)
                 }
                 Spacer()
             }
         }
-        .task {
-            user = loadUserProfile()
-        }
-    }
-
-    // MARK: - Top Bar
-    @ViewBuilder
-    func topBar(for user: UserProfile) -> some View {
-        HStack {
-            Label("Marriott Bonvoy", systemImage: "building.2.crop.circle")
-                .font(.title3.bold())
-                .foregroundStyle(.black)
-            Spacer()
-            VStack(alignment: .trailing, spacing: 4) {
-                Text("Welcome, \(user.name) 👋")
-                    .font(.headline)
-                    .foregroundStyle(.black)
-                Text("\(user.tier) • \(user.bonvoyPoints) pts")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-            }
-        }
-        .padding()
-        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16))
-        .padding(.horizontal)
+        .task { user = loadUserProfile() }
     }
 }
 
 
 
+
+#Preview {
+    MapDashboardView()
+}

@@ -14,6 +14,8 @@ struct SidebarView: View {
     @State private var feed: RecommendationFeed? = loadRecommendations()
     @StateObject private var searchModel = PlaceSearchModel()
     @StateObject private var uber = UberEstimateModel()
+    @StateObject private var resolver = PlaceDistanceResolver()
+
 
     // Hardcode hotel as the reference
     private let hotelCoordinate = CLLocationCoordinate2D(latitude: 37.2309, longitude: -80.4236)
@@ -130,7 +132,12 @@ struct SidebarView: View {
                     // MARK: - Explore Recommendations
                     if let feed {
                         ForEach(feed.recommendations.sorted(by: { $0.key < $1.key }), id: \.key) { key, category in
-                            ExploreList(title: key, items: category.items)
+                            ExploreList(title: key.capitalized, items: category.items){
+                                coordinate in
+                                focusOn(coordinate)
+                            }
+                                .environmentObject(resolver)
+
                         }
                     }
 
@@ -147,4 +154,9 @@ struct SidebarView: View {
         guard let n = profile?.name.split(separator: " ").first else { return "?" }
         return String(n.prefix(1)).uppercased()
     }
+    
+    private func focusOn(_ coordinate: CLLocationCoordinate2D) {
+        NotificationCenter.default.post(name: .focusMapOnLocation, object: coordinate)
+    }
+
 }

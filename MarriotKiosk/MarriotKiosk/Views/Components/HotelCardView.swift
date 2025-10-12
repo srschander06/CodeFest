@@ -7,6 +7,7 @@
 
 
 import SwiftUI
+import Contacts
 import MapKit
 
 struct HotelCardView: View {
