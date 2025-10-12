@@ -1,11 +1,180 @@
 {
-  "id": "5F3A2B9D-72D6-4E11-A74E-BC21F0E6A5D9",
-  "name": "Aryan Palit",
-  "tier": "Platinum Elite",
-  "bonvoy_points": 124500,
-  "member_since": "2017-03-15",
-  "travel_preferences": {
-    "travel_style": "Luxury Explorer",
-    "interests": ["Local Cuisine", "Cultural Heritage", "Beach Relaxation"]
-  }
+  "member_id": "MB789456123",
+  "username": "sarah.chen.travel",
+  "email": "sarah.chen@email.com",
+  "phone": "-1135",
+  "first_name": "Sarah",
+  "last_name": "Chen",
+  "date_of_birth": "1987-06-22",
+  "member_since": "2018-03-15",
+  "elite_status": "Platinum Elite",
+  "lifetime_nights": 487,
+  "current_year_nights": 52,
+  "points_balance": 284500,
+  "address": {
+    "city": "Crozet",
+    "state": "Virginia",
+    "street": "2847 Woodland Heights",
+    "country": "United States",
+    "zipCode": "22932"
+  },
+  "emergency_contact": {
+    "name": "Michael Chen",
+    "phone": "+1-434-555-0148",
+    "relationship": "Spouse"
+  },
+  "room_preferences": {
+    "bedType": "King",
+    "minibar": "Empty for personal use",
+    "workspace": "Ergonomic chair",
+    "pillowType": "Memory foam",
+    "roomLocation": "Away from elevator",
+    "entertainment": "Smart TV logged in",
+    "viewPreference": "City view",
+    "floorPreference": "High floor",
+    "roomTemperature": 68,
+    "accessibilityNeeds": "None"
+  },
+  "dining_preferences": {
+    "diningStyle": "Fine dining",
+    "breakfastStyle": "Continental",
+    "typicalDinnerTime": "19:00",
+    "cuisinePreferences": [
+      "Italian",
+      "Asian",
+      "Mediterranean",
+      "American"
+    ],
+    "beveragePreferences": {
+      "tea": "Green tea",
+      "coffee": "Cappuccino, oat milk",
+      "alcohol": "White wine, sake"
+    },
+    "dietaryRestrictions": {
+      "allergies": [
+        "Shellfish"
+      ],
+      "medicalDiet": "None",
+      "dietaryChoice": "Pescatarian"
+    }
+  },
+  "service_preferences": {
+    "newspaper": "Digital - WSJ, NY Times",
+    "wakeUpCall": false,
+    "housekeeping": {
+      "frequency": "Daily",
+      "turndownTime": "20:00",
+      "preferredTime": "Morning (9-11am)",
+      "turndownService": true
+    },
+    "communication": {
+      "contactMethod": "Text/SMS",
+      "marketingOptIn": true,
+      "primaryLanguage": "English",
+      "doNotDisturbHours": "22:00-07:00",
+      "secondaryLanguage": "Mandarin"
+    }
+  },
+  "wellness_preferences": {
+    "spa": {
+      "aromatherapy": "Lavender",
+      "treatmentTypes": [
+        "Massage",
+        "Facial"
+      ],
+      "appointmentTime": "Evening",
+      "pressurePreference": "Medium"
+    },
+    "fitness": {
+      "equipmentFocus": "Cardio",
+      "fitnessClasses": [
+        "Yoga",
+        "Pilates"
+      ],
+      "personalTraining": "Interested",
+      "preferredWorkoutTime": "06:00"
+    }
+  },
+  "business_preferences": {
+    "companyName": "TechVision Solutions",
+    "corporateCode": "TECHCORP2024",
+    "invoiceFormat": "Detailed",
+    "meetingRoomSetup": "U-shape",
+    "businessCenterNeeds": "Printing"
+  },
+  "loyalty_preferences": {
+    "airlinePartner": "United Airlines",
+    "redemptionGoal": "5-night luxury resort stay",
+    "pointRedemption": "Save for specific goals",
+    "carRentalPartner": "Hertz",
+    "bonusOfferInterests": [
+      "Spa",
+      "Dining",
+      "Experiences"
+    ],
+    "eliteBenefitPriority": "Suite upgrades"
+  },
+  "transportation_preferences": {
+    "evCharging": false,
+    "specialNeeds": "None",
+    "rentalCarType": "Midsize SUV",
+    "transferTiming": 30,
+    "airportTransfer": "Private car",
+    "rentalCarCompany": "Hertz",
+    "parkingPreference": "Valet"
+  },
+  "special_occasions": {
+    "importantDates": [
+      {
+        "date": "06-22",
+        "type": "Birthday",
+        "celebrationStyle": "Subtle acknowledgment"
+      },
+      {
+        "date": "09-14",
+        "type": "Anniversary",
+        "celebrationStyle": "Private"
+      }
+    ],
+    "welcomeAmenity": "Local specialties",
+    "musicPreference": "Jazz, Classical",
+    "scentPreference": "Fragrance-free",
+    "lightingPreference": "Dim"
+  },
+  "travel_companions_meta": {
+    "petFriendly": false,
+    "childrenAges": [],
+    "connectingRooms": true,
+    "frequentCompanions": [
+      {
+        "name": "Michael Chen",
+        "memberId": "MB789456124",
+        "relationship": "Spouse"
+      }
+    ]
+  },
+  "cultural_preferences": {
+    "prayerMat": false,
+    "qiblaDirection": false,
+    "culturalAmenities": "None",
+    "sabbathObservance": false
+  },
+  "technology_preferences": {
+    "mobileKey": true,
+    "digitalCheckIn": true,
+    "wifiAutoConnect": true,
+    "appNotifications": [
+      "Promotions",
+      "Stay updates",
+      "Points activity"
+    ],
+    "smartRoomControls": "Voice-activated",
+    "streamingServices": [
+      "Netflix",
+      "Spotify"
+    ],
+    "typicalDeviceCount": 3
+  },
+  "created_at": "2025-10-12T17:10:42.501813Z",
+  "updated_at": "2025-10-12T17:10:42.501813Z"
 }

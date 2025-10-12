@@ -12,8 +12,9 @@ struct MapDashboardView: View {
     // MARK: - State
     @State private var user: UserProfile? = nil
 
-    private let hotelCoordinate = CLLocationCoordinate2D(latitude: 37.2296, longitude: -80.4273)
-    private let guestCoordinate = CLLocationCoordinate2D(latitude: 37.2301, longitude: -80.4265)
+    // Approximate coordinate for Courtyard by Marriott Blacksburg
+    private let hotelCoordinate = CLLocationCoordinate2D(latitude: 37.2298, longitude: -80.4275)
+    private let guestCoordinate = CLLocationCoordinate2D(latitude: 37.2298, longitude: -80.4275)
 
     var body: some View {
         ZStack(alignment: .topLeading) {
@@ -71,3 +72,6 @@ struct MapDashboardView: View {
         .padding(.horizontal)
     }
 }
+
+
+

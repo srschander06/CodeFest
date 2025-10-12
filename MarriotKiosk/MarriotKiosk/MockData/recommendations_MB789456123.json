@@ -1,0 +1,197 @@
+{
+  "member_id": "MB789456123",
+  "recommendations": {
+    "dining": {
+      "created_at": "2025-10-12T17:20:52.030501Z",
+      "items": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurants-g57513-Blacksburg_Virginia.html",
+          "name": "Black Hen Restaurant and Bar Blue",
+          "description": "For a true fine dining experience, The Black Hen is an excellent choice, described on TripAdvisor as offering gourmet food in a refined atmosphere. As a fan of American cuisine, you will appreciate their contemporary offerings. Given its high-end menu and bar, you should find a lovely white wine to pair with one of their pescatarian-friendly dishes, making for a memorable evening."
+        },
+        {
+          "url": "https://www.tripadvisor.com/Restaurants-g57513-Blacksburg_Virginia.html",
+          "name": "622 North",
+          "description": "This contemporary American restaurant and wine bar is a superb match for your fine dining preference and love of white wine. With a sophisticated '$$ - $$$' price point, 622 North offers a refined atmosphere perfect for your 7:00 PM dinner. Its menu is likely to feature excellent pescatarian dishes that pair well with its extensive wine selection."
+        },
+        {
+          "url": "https://www.tripadvisor.com/Restaurants-g57513-Blacksburg_Virginia.html",
+          "name": "Blacksburg Wine Lab",
+          "description": "Given your preference for white wine, the Blacksburg Wine Lab is a highly recommended and unique choice. It's praised as a great place for a special occasion, aligning with your desire for a fine dining atmosphere. Their international menu should provide interesting pescatarian options to explore alongside a curated wine tasting experience."
+        },
+        {
+          "url": "https://www.restaurantji.com/va/blacksburg/zeppolis-italian-restaurant-and-wine-shop-/",
+          "name": "Zeppoli's Italian Restaurant and Wine Shop",
+          "description": "A long-time local favorite, Zeppoli's offers a wonderful dining experience that perfectly suits your preference for Italian cuisine and white wine. It is known for customizable dishes, with reviews specifically mentioning adding salmon to pasta, making it an ideal choice for your pescatarian diet. The restaurant's warm atmosphere and friendly staff make it a reliable and enjoyable option for dinner."
+        },
+        {
+          "url": "https://www.restaurantji.com/va/blacksburg/prestons-restaurant-/",
+          "name": "Preston's Restaurant",
+          "description": "Preston's offers an upscale American dining experience that aligns well with your preferences. As a restaurant and wine bar located in an inn, it provides a sophisticated setting perfect for fine dining. Its American menu is sure to have excellent pescatarian entrees, and the bar can provide a quality white wine to complement your meal."
+        },
+        {
+          "url": "https://www.tripadvisor.com/Restaurants-g57513-Blacksburg_Virginia.html",
+          "name": "Ocean Samurai",
+          "description": "To satisfy your taste for Asian cuisine and sake, Ocean Samurai is an excellent fit, noted for its 'excellent service and sushi rolls.' This Japanese restaurant provides a fantastic pescatarian-friendly menu. Please be sure to inform your server of your shellfish allergy so they can guide you to safe and delicious options."
+        },
+        {
+          "url": "https://www.menupix.com/virginia/restaurants/28296624/Avellinos-Blacksburg-VA",
+          "name": "Avellinos Italian Restaurant & Pizzeria",
+          "description": "Avellinos is a great choice for a high-quality Italian meal, serving a wide selection of dishes including seafood that will suit your pescatarian diet. While the attire is noted as casual, reviews praise the delicious food, generous portions, and attentive service. With a full bar, you can enjoy a glass of white wine with your dinner."
+        },
+        {
+          "url": "https://www.tripadvisor.com/Restaurants-g57513-Blacksburg_Virginia.html",
+          "name": "Cafe Mekong",
+          "description": "For a flavorful Asian option, Cafe Mekong offers highly-rated Thai cuisine. Reviews praise standout pescatarian-friendly dishes like pho and fried rice, which can be prepared to meet your dietary needs. This spot is perfect for enjoying an authentic and satisfying meal in a comfortable setting."
+        }
+      ]
+    },
+    "surprise": {
+      "created_at": "2025-10-12T17:21:41.848516Z",
+      "items": [
+        {
+          "url": "https://www.letsroam.com/things-to-do/blacksburg-va?srsltid=AfmBOopSs4FjmYegW5deMS8Gq19zGjOMlnLbo077d0HfwGalozFt9Nv-",
+          "name": "Downtown Blacksburg Ghost Tour",
+          "description": "While you appreciate the art of fine dining, we thought you might enjoy the dark art of storytelling with an app-led ghost tour. This isn't a typical historical walk; it's an immersive journey into the town's haunting stories, filled with eerie riddles and chilling trivia at historic landmarks. It's a completely unexpected way to explore the city's hidden history after dinner, offering a memorable and thrilling local secret.",
+          "surprise_factor": 9
+        },
+        {
+          "url": "https://basketball.travelsports.com/facilities/blue-ridge-axe-blacksburg",
+          "name": "Blue Ridge Axe Throwing",
+          "description": "For an experience that contrasts beautifully with a serene massage or facial, we suggest an evening of axe throwing. This is a wonderfully rustic and exhilarating local pastime that offers a completely different kind of stress relief and focus. It's a chance to engage in some playful competition in a lively, social atmosphere that locals love, making for an unforgettable and unconventional story to take home.",
+          "surprise_factor": 10
+        },
+        {
+          "url": "https://evendo.com/locations/virginia/blacksburg/landmark/the-blacksburg-tavern",
+          "name": "The Blacksburg Tavern",
+          "description": "Though the name suggests a casual affair, The Blacksburg Tavern is a hidden gem for a palate accustomed to fine dining. We recommend this spot as a surprise because of its dedication to high-quality, locally sourced ingredients, which elevates traditional American fare. The rustic and inviting decor offers an authentic, charming atmosphere that feels like a local secret, providing a sophisticated yet relaxed dining experience.",
+          "surprise_factor": 7
+        },
+        {
+          "url": "https://evendo.com/locations/virginia/blacksburg/landmark/puzzlr-puzzle-and-escape-rooms",
+          "name": "Puzzlr - Puzzle and Escape Rooms",
+          "description": "Here is a unique challenge that engages the mind in a way a facial soothes the skin. Puzzlr escape rooms offer an immersive adventure where you can solve intricate puzzles and unravel a story against the clock. It's a highly collaborative and intellectually stimulating activity that you wouldn't typically consider on a relaxing getaway. This off-the-beaten-path experience is perfect for an afternoon of unexpected, memorable fun.",
+          "surprise_factor": 8
+        },
+        {
+          "url": "https://evendo.com/locations/virginia/blacksburg/attraction/nellies-cave-park",
+          "name": "Wellness at Nellie's Cave Park",
+          "description": "Instead of a traditional spa treatment, we invite you to experience a different kind of wellness amidst the natural beauty of Nellie's Cave Park. This serene local park offers well-maintained hiking trails with breathtaking mountain views and tranquil woods. It's a surprising way to connect with your interest in wellness by finding rejuvenation in nature, offering a peaceful escape that many visitors overlook.",
+          "surprise_factor": 8
+        },
+        {
+          "url": "https://evendo.com/locations/virginia/blacksburg/attraction/alexander-black-house-cultural-center",
+          "name": "Alexander Black House & Cultural Center",
+          "description": "For a quiet and sophisticated afternoon, we recommend this cultural hidden gem. While not on your list, an appreciation for fine dining often goes hand-in-hand with an appreciation for history and art. This meticulously restored 19th-century house hosts a variety of exhibitions on local heritage, offering a unique opportunity to connect with the town's spirit in its beautiful gardens and historic rooms.",
+          "surprise_factor": 6
+        }
+      ]
+    },
+    "attractions": {
+      "created_at": "2025-10-12T17:22:34.544884Z",
+      "items": [
+        {
+          "url": "https://huckleberrytrail.org/",
+          "name": "Huckleberry Trail",
+          "category": "Park",
+          "best_time": "Anytime",
+          "description": "Since you enjoy Yoga and Pilates, you will appreciate this scenic, paved path perfect for a mindful walk, run, or gentle bike ride. The trail offers a peaceful outdoor escape to stretch your legs and clear your mind, providing a great low-impact way to stay active. It's a local favorite that runs from the heart of Blacksburg to the New River Mall."
+        },
+        {
+          "url": "https://www.fs.usda.gov/recarea/gwj/recreation/hiking/recarea/?recid=79943&actid=50",
+          "name": "Cascades National Recreation Area",
+          "category": "Park",
+          "best_time": "Morning",
+          "description": "For a refreshing outdoor experience that complements your fitness interests, consider this four-mile round-trip hike. The trail is of low to moderate difficulty and culminates in a stunning 66-foot waterfall, offering a truly restorative and picturesque reward. The tranquil sounds of the water and the beauty of the Jefferson National Forest make it a perfect activity for wellness."
+        },
+        {
+          "url": "https://www.facebook.com/BeliveauFarmWinery/",
+          "name": "Beliveau Farm & Winery",
+          "category": "Wellness",
+          "best_time": "Afternoon",
+          "description": "To indulge your wellness interests, a visit to this beautiful farm and winery is a must for a relaxing afternoon. You can enjoy wine tastings amidst rolling green hills, listen to live music, and simply unwind in a serene setting just outside of town. It is the perfect place to de-stress and enjoy a tranquil experience."
+        },
+        {
+          "url": "https://www.tripadvisor.com/Attractions-g57513-Activities-Blacksburg_Virginia.html",
+          "name": "Hahn Horticulture Garden",
+          "category": "Park",
+          "best_time": "Afternoon",
+          "description": "This beautifully designed garden on the Virginia Tech campus offers a peaceful and restorative setting for a quiet stroll. It's an ideal spot to practice mindfulness, much like in yoga, while surrounded by stunning displays of flowers, trees, and even vegetables. This is a true local gem for a relaxing afternoon break."
+        },
+        {
+          "url": "https://blacksburgfarmersmarket.com/",
+          "name": "Blacksburg Farmers Market",
+          "category": "Market",
+          "best_time": "Morning",
+          "description": "For a vibrant and relaxing local experience, visit this award-winning farmers market on a Wednesday or Saturday. You can browse fresh, organic products and handcrafted goods from local artisans, which aligns well with a wellness-focused lifestyle. It's a wonderful way to spend a morning and get a true taste of the local community."
+        },
+        {
+          "url": "https://artscenter.vt.edu/about.html",
+          "name": "Moss Arts Center",
+          "category": "Entertainment",
+          "best_time": "Evening",
+          "description": "For a sophisticated indoor activity, the Moss Arts Center at Virginia Tech presents world-class visual arts, exhibitions, and performances. It's a wonderful way to spend an evening immersing yourself in culture and creativity. Be sure to check their calendar for unique performances by renowned artists from around the globe."
+        },
+        {
+          "url": "https://dwr.virginia.gov/vbwt/sites/pandapas-pond/",
+          "name": "Pandapas Pond",
+          "category": "Park",
+          "best_time": "Anytime",
+          "description": "If you're seeking a gentle and serene outdoor activity, Pandapas Pond is an excellent choice. This eight-acre pond is surrounded by extensive, easy hiking trails perfect for a calm walk and wildlife viewing. It's a peaceful setting ideal for de-stressing and connecting with nature, similar to the meditative aspects of your yoga practice."
+        },
+        {
+          "url": "https://www.thedogs.com/",
+          "name": "Chateau Morrisette Winery",
+          "category": "Wellness",
+          "best_time": "Afternoon",
+          "description": "Located a short drive away on the scenic Blue Ridge Parkway, this beautiful winery offers another fantastic wellness retreat. You can enjoy a wine flight, relax on the patio, and take in picturesque mountain views. It's an ideal destination for a relaxing day trip focused on savoring the moment and rejuvenating your senses."
+        }
+      ]
+    },
+    "nightlife": {
+      "created_at": "2025-10-12T17:23:20.217200Z",
+      "items": [
+        {
+          "url": "https://www.innatvirginiatech.com/dining/continental-divide-lounge",
+          "name": "Continental Divide Lounge",
+          "best_time": "8-10 PM",
+          "dress_code": "Smart Casual",
+          "venue_type": "Lounge",
+          "description": "For a refined and relaxing evening that complements your fine dining style, the Continental Divide Lounge is an excellent choice. It features an extensive selection of white wines that perfectly match your preferences, including various Rieslings, Chardonnays, and Sauvignon Blancs. The sophisticated lounge atmosphere is ideal for a quiet conversation or simply unwinding after your dinner, providing a tranquil experience that respects your schedule."
+        },
+        {
+          "url": "https://evendo.com/locations/virginia/blacksburg/nightclub/melody-hookah-bar",
+          "name": "Melody Hookah Bar",
+          "best_time": "8-10 PM",
+          "dress_code": "Casual",
+          "venue_type": "Lounge",
+          "description": "If you are open to a unique and casual option for a quiet evening, consider Melody Hookah Bar. It offers an inviting ambiance with cozy seating, dim lighting, and soft music, creating a relaxed environment perfect for unwinding. This spot provides a different kind of social setting where you can enjoy a calm atmosphere after dinner and be back well before your 'do not disturb' time."
+        },
+        {
+          "url": "https://www.topofthestairs.com/",
+          "name": "Top of the Stairs",
+          "best_time": "8-9 PM",
+          "dress_code": "Casual",
+          "venue_type": "Bar",
+          "description": "For a more casual and lively experience, Top of the Stairs offers a vibrant atmosphere with an outdoor seating area perfect for enjoying the evening. While known for being a popular local spot, visiting earlier in the evening allows you to experience its social scene before it gets too crowded. They offer a selection of bottled wine that you could enjoy for a relaxed pre-10 PM outing."
+        },
+        {
+          "url": "https://www.themilkparlorblacksburg.com/",
+          "name": "The Milk Parlor",
+          "best_time": "7-9 PM",
+          "dress_code": "Casual",
+          "venue_type": "Live Music Venue",
+          "description": "Offering a casual and uniquely local atmosphere, The Milk Parlor could be a relaxing stop for an early evening. While it is known for live entertainment, you can visit before the main events to enjoy a quiet drink and experience a different side of Blacksburg's culture. Their early evening hours would fit perfectly into your schedule for a quick visit after dinner."
+        },
+        {
+          "url": "https://evendo.com/locations/virginia/blacksburg/landmark/top-of-the-stairs",
+          "name": "Alexander Black House & Cultural Center",
+          "best_time": "7-9 PM",
+          "dress_code": "Smart Casual",
+          "venue_type": "Entertainment Venue",
+          "description": "For an evening that aligns with your appreciation for classical arts, consider checking the schedule for the Alexander Black House & Cultural Center. While not a bar or lounge, this nearby attraction may host early evening gallery openings, classical music recitals, or cultural talks. This would be a sophisticated and tranquil way to spend your time after dinner, perfectly fitting your musical tastes."
+        }
+      ]
+    }
+  }
+}
