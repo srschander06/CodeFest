@@ -12,6 +12,7 @@ struct PersonalizedItineraryView: View {
     @State private var generator = PersonalizedItineraryGenerator()
     var autoGenerate: Bool = false
     @State private var pdfURL: URL? = nil
+    @State private var renderHeight: CGFloat = 0
 
     var body: some View {
         VStack(spacing: 0) {
@@ -30,6 +31,7 @@ struct PersonalizedItineraryView: View {
                 }
                 .padding(.trailing, 16)
                 .padding(.top, 16)
+                .disabled(generator.itinerary == nil || generator.isLoading)
             }
 
             // MARK: - Itinerary Content
@@ -52,6 +54,67 @@ struct PersonalizedItineraryView: View {
         .task {
             if autoGenerate, generator.itinerary == nil {
                 await generator.generatePersonalizedItinerary()
+            }
+        }
+    }
+
+    // MARK: - Render-only itinerary (no ScrollView) for PDF sizing
+    private var renderableItinerary: some View {
+        Group {
+            if let trip = generator.itinerary {
+                VStack(alignment: .leading, spacing: 12) {
+                    if let destination = trip.destination {
+                        Text(destination)
+                            .font(.largeTitle.bold())
+                            .padding(.bottom, 8)
+                    }
+
+                    if let days = trip.days {
+                        ForEach(days, id: \.id) { day in
+                            VStack(alignment: .leading, spacing: 8) {
+                                if let label = day.dayLabel {
+                                    Text(label).font(.headline)
+                                }
+                                if let summary = day.summary {
+                                    Text(summary)
+                                        .font(.subheadline)
+                                        .foregroundStyle(.secondary)
+                                }
+                                if let sections = day.sections {
+                                    ForEach(sections, id: \.id) { section in
+                                        VStack(alignment: .leading, spacing: 4) {
+                                            if let title = section.title {
+                                                Text(title).font(.subheadline.bold())
+                                            }
+                                            if let activities = section.activities {
+                                                ForEach(activities, id: \.id) { activity in
+                                                    if let name = activity.name {
+                                                        Text("• \(name)").font(.footnote)
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .padding(.vertical, 4)
+                                    }
+                                }
+                            }
+                            .padding(.vertical, 6)
+                            Divider()
+                        }
+                    }
+                }
+                .padding()
+                .background(
+                    GeometryReader { proxy in
+                        Color.clear
+                            .onAppear { renderHeight = proxy.size.height }
+                            .onChange(of: proxy.size.height) { newValue in
+                                renderHeight = newValue
+                            }
+                    }
+                )
+            } else {
+                EmptyView()
             }
         }
     }
@@ -126,31 +189,52 @@ struct PersonalizedItineraryView: View {
 extension PersonalizedItineraryView {
     @MainActor
     func exportToPDF() async {
+        // Ensure we have content to render
+        guard generator.itinerary != nil else { return }
+        
+        // Allow SwiftUI a moment to lay out the renderable view
+        try? await Task.sleep(nanoseconds: 50_000_000) // 50ms
+        
         let pageSize = CGSize(width: 612, height: 792) // US Letter size
         let pageRect = CGRect(origin: .zero, size: pageSize)
-
-        // Render the SwiftUI content into CoreGraphics
-        let renderer = ImageRenderer(content: content.frame(width: pageSize.width, height: pageSize.height))
-
+        
+        // Determine total content height (at least one page)
+        let totalHeight = max(renderHeight, pageSize.height)
+        
+        // Build a renderer for the static (non-ScrollView) itinerary content
+        let renderer = ImageRenderer(
+            content: renderableItinerary
+                .frame(width: pageSize.width, height: totalHeight)
+                .background(Color.white)
+        )
+        
         let format = UIGraphicsPDFRendererFormat()
         format.documentInfo = [
             kCGPDFContextTitle as String: "Personalized Itinerary",
             kCGPDFContextAuthor as String: "Marriott Concierge"
         ]
-
+        
         let pdfRenderer = UIGraphicsPDFRenderer(bounds: pageRect, format: format)
+        let pageCount = Int(ceil(totalHeight / pageSize.height))
+        
         let data = pdfRenderer.pdfData { ctx in
-            ctx.beginPage()
-            renderer.render { _, render in
+            for pageIndex in 0..<pageCount {
+                ctx.beginPage()
                 let cg = ctx.cgContext
                 cg.saveGState()
+                // Flip coords for SwiftUI rendering
                 cg.translateBy(x: 0, y: pageRect.height)
                 cg.scaleBy(x: 1, y: -1)
-                render(cg)
+                // Clip to page and translate to the correct slice
+                cg.clip(to: pageRect)
+                cg.translateBy(x: 0, y: -CGFloat(pageIndex) * pageSize.height)
+                renderer.render { _, render in
+                    render(cg)
+                }
                 cg.restoreGState()
             }
         }
-
+        
         let url = FileManager.default.temporaryDirectory.appendingPathComponent("Itinerary.pdf")
         do {
             try data.write(to: url, options: .atomic)
@@ -165,3 +249,4 @@ extension PersonalizedItineraryView {
 #Preview {
     PersonalizedItineraryView(autoGenerate: true)
 }
+
