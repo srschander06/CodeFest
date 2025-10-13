@@ -5,7 +5,6 @@
 //  Created by Aryan Palit on 10/13/25.
 //
 
-
 import Foundation
 import FoundationModels
 import Observation
@@ -13,20 +12,19 @@ import Observation
 @Observable
 @MainActor
 final class PersonalizedItineraryGenerator {
-    private var session: LanguageModelSession
-    private(set) var itineraryText: String?
+    private(set) var itinerary: Trip.PartiallyGenerated?
     private(set) var isLoading = false
     private(set) var error: Error?
+
+    private var session: LanguageModelSession
 
     init() {
         let instructions = Instructions {
             """
-            You are a Marriott Bonvoy concierge.
-            Use the user's travel and dining preferences plus local recommendations
-            to generate a personalized 1-day itinerary.
-
-            Include morning, afternoon, and evening activities with dining and relaxation suggestions.
-            Output short paragraphs for each time period.
+            You are a Marriott Bonvoy AI Concierge.
+            Create structured, personalized itineraries using the Trip schema.
+            Each day includes a short summary and three sections: Morning, Afternoon, and Evening.
+            Avoid using raw date values; use simple labels like 'Day 1' or 'Oct 13'.
             """
         }
         session = LanguageModelSession(instructions: instructions)
@@ -34,7 +32,7 @@ final class PersonalizedItineraryGenerator {
 
     func generatePersonalizedItinerary() async {
         guard let user = loadUserProfile(), let feed = loadRecommendations() else {
-            print("❌ Missing local JSON data.")
+            print("❌ Missing local data.")
             return
         }
 
@@ -42,28 +40,39 @@ final class PersonalizedItineraryGenerator {
         defer { isLoading = false }
 
         do {
-            // Pull key recommendation info
-            let allItems = feed.recommendations.values.flatMap(\.items)
-            let sample = allItems.prefix(6).map { "• \($0.name)" }.joined(separator: "\n")
-
             let interests = user.travelPreferences.interests.joined(separator: ", ")
+            let dining = feed.recommendations["dining"]?.items.prefix(3).map(\.name).joined(separator: ", ") ?? ""
+            let attractions = feed.recommendations["attractions"]?.items.prefix(3).map(\.name).joined(separator: ", ") ?? ""
+            let nightlife = feed.recommendations["nightlife"]?.items.prefix(2).map(\.name).joined(separator: ", ") ?? ""
+
             let prompt = Prompt {
                 """
-                Create a 1-day itinerary in Blacksburg, VA for \(user.name),
-                a Marriott Bonvoy \(user.tier) member who enjoys \(interests).
+                Generate a 2-day personalized itinerary in Blacksburg, VA for Marriott Bonvoy member \(user.name).
 
-                Sample local places they might like:
-                \(sample)
+                Interests: \(interests)
+                Dining: \(dining)
+                Attractions: \(attractions)
+                Nightlife: \(nightlife)
 
-                Include breakfast, midday activity, dinner, and one evening recommendation.
+                Output must conform to the Trip schema (using text labels for dates).
                 """
             }
 
-            let response = try await session.respond(to: prompt)
-            itineraryText = response.content
+            let stream = session.streamResponse(
+                to: prompt,
+                generating: Trip.self,
+                includeSchemaInPrompt: false,
+                options: GenerationOptions(sampling: .greedy)
+            )
+
+            for try await partial in stream {
+                itinerary = partial.content
+            }
 
         } catch {
             self.error = error
         }
     }
+
+    func prewarmModel() { session.prewarm() }
 }

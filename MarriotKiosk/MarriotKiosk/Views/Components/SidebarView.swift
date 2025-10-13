@@ -12,7 +12,7 @@ struct SidebarView: View {
     @State private var showProfile = false
     @State private var profile: UserProfile? = loadUserProfile()
     @State private var feed: RecommendationFeed? = loadRecommendations()
-    @StateObject private var searchModel = PlaceSearchModel()
+    @StateObject private var searchModel = PlaceSearchModel(referenceCoordinate: CLLocationCoordinate2D(latitude: 37.2296, longitude: -80.4273))
     @StateObject private var uber = UberEstimateModel()
     @StateObject private var resolver = PlaceDistanceResolver()
     @State private var showItinerary = false   // <-- Added for AI Trip Planner sheet
@@ -28,6 +28,10 @@ struct SidebarView: View {
 
             ScrollView(.vertical, showsIndicators: true) {
                 VStack(alignment: .leading, spacing: 28) {
+                    
+                    
+                    // MARK: - Hotel Info Card
+                    HotelCardView(coordinate: hotelCoordinate)
 
                     // MARK: - Search Bar + Avatar
                     HStack {
@@ -62,10 +66,11 @@ struct SidebarView: View {
                     }
                     .padding()
                     .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 16))
-                    
-                    // MARK: - Hotel Info Card
-                    HotelCardView(coordinate: hotelCoordinate)
+                
 
+                    // MARK: - Trip Planner Button
+                  
+                    
                     // MARK: - Search Results
                     if !searchModel.results.isEmpty {
                         VStack(alignment: .leading, spacing: 12) {
@@ -74,6 +79,15 @@ struct SidebarView: View {
                             ForEach(searchModel.results, id: \.self) { item in
                                 Button {
                                     uber.estimate(from: hotelCoordinate, to: item.placemark.coordinate)
+                                    if let coord = item.placemark.location?.coordinate {
+                                            focusOn(coord)
+                                        }
+
+                                        // 3. (Optional) clear search results for cleaner UX
+                                        withAnimation {
+                                            searchModel.results.removeAll()
+                                            searchModel.query = ""
+                                        }
                                 } label: {
                                     HStack {
                                         Image(systemName: "mappin.circle.fill")
@@ -101,6 +115,23 @@ struct SidebarView: View {
                         }
                     }
 
+                    Divider()
+                    
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text("Marriott Digital Concierge")
+                            .font(.headline)
+                        Button {
+                            showItinerary = true
+                        } label: {
+                            Label("Suggest a Day Plan", systemImage: "sparkles")
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 12)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .tint(.accentColor)
+                    }
+                    .padding(.vertical, 8)
+                    
                     Divider()
 
                     // MARK: - Uber Estimate Card
@@ -139,21 +170,7 @@ struct SidebarView: View {
 
                     Divider()
 
-                    // MARK: - AI Trip Planner Button
-                    VStack(alignment: .leading, spacing: 12) {
-                        Text("Trip Planner")
-                            .font(.headline)
-                        Button {
-                            showItinerary = true
-                        } label: {
-                            Label("Generate Personalized Itinerary", systemImage: "sparkles")
-                                .frame(maxWidth: .infinity)
-                                .padding(.vertical, 12)
-                        }
-                        .buttonStyle(.borderedProminent)
-                        .tint(.accentColor)
-                    }
-                    .padding(.vertical, 8)
+                  
 
                     Spacer(minLength: 40)
                 }
@@ -164,7 +181,7 @@ struct SidebarView: View {
         .shadow(radius: 20)
         // MARK: - Sheet Presentation for AI Trip Planner
         .sheet(isPresented: $showItinerary) {
-            PersonalizedItineraryView()
+            PersonalizedItineraryView(autoGenerate: true)
                 .presentationDetents([.medium, .large])
                 .presentationCornerRadius(24)
         }

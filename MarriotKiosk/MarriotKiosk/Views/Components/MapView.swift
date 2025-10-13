@@ -15,6 +15,7 @@ struct MapViewWrapper: UIViewRepresentable {
     let guestCoordinate: CLLocationCoordinate2D
     @Binding var recenterTrigger: Bool
     @Binding var mapStyle: MapStyleOption
+    
 
     func makeUIView(context: Context) -> MKMapView {
         mapView.delegate = context.coordinator

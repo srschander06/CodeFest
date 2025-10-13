@@ -41,6 +41,7 @@ struct MapDashboardView: View {
                 SidebarView()
                     .frame(width: 350)
                     .padding(.top, 60)
+                    .padding(.leading, 24)
                     .shadow(radius: 10)
                 Spacer()
             }
@@ -62,7 +63,7 @@ struct MapDashboardView: View {
                             .labelStyle(.iconOnly)
                             .font(.title2.bold())
                             .padding(12)
-                            .background(.ultraThinMaterial, in: Circle())
+                            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 20))
                             .shadow(radius: 3)
                     }
                     .padding(.trailing, 20)
