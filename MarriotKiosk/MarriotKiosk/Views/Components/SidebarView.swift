@@ -15,7 +15,7 @@ struct SidebarView: View {
     @StateObject private var searchModel = PlaceSearchModel()
     @StateObject private var uber = UberEstimateModel()
     @StateObject private var resolver = PlaceDistanceResolver()
-
+    @State private var showItinerary = false   // <-- Added for AI Trip Planner sheet
 
     // Hardcode hotel as the reference
     private let hotelCoordinate = CLLocationCoordinate2D(latitude: 37.2309, longitude: -80.4236)
@@ -33,12 +33,10 @@ struct SidebarView: View {
                     HStack {
                         Image(systemName: "magnifyingglass")
                         TextField("Search nearby places", text: $searchModel.query)
-                           
                             .textInputAutocapitalization(.words)
                             .disableAutocorrection(true)
                             .onSubmit { searchModel.search() }
                             .onChange(of: searchModel.query) { _ in
-                                // slight debounce behavior
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                     searchModel.search()
                                 }
@@ -65,9 +63,8 @@ struct SidebarView: View {
                     .padding()
                     .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 16))
                     
-                    
                     // MARK: - Hotel Info Card
-                                      HotelCardView(coordinate: hotelCoordinate)
+                    HotelCardView(coordinate: hotelCoordinate)
 
                     // MARK: - Search Results
                     if !searchModel.results.isEmpty {
@@ -133,14 +130,30 @@ struct SidebarView: View {
                     // MARK: - Explore Recommendations
                     if let feed {
                         ForEach(feed.recommendations.sorted(by: { $0.key < $1.key }), id: \.key) { key, category in
-                            ExploreList(title: key.capitalized, items: category.items){
-                                coordinate in
+                            ExploreList(title: key.capitalized, items: category.items) { coordinate in
                                 focusOn(coordinate)
                             }
-                                .environmentObject(resolver)
-
+                            .environmentObject(resolver)
                         }
                     }
+
+                    Divider()
+
+                    // MARK: - AI Trip Planner Button
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text("Trip Planner")
+                            .font(.headline)
+                        Button {
+                            showItinerary = true
+                        } label: {
+                            Label("Generate Personalized Itinerary", systemImage: "sparkles")
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 12)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .tint(.accentColor)
+                    }
+                    .padding(.vertical, 8)
 
                     Spacer(minLength: 40)
                 }
@@ -149,6 +162,12 @@ struct SidebarView: View {
         }
         .frame(width: 380)
         .shadow(radius: 20)
+        // MARK: - Sheet Presentation for AI Trip Planner
+        .sheet(isPresented: $showItinerary) {
+            PersonalizedItineraryView()
+                .presentationDetents([.medium, .large])
+                .presentationCornerRadius(24)
+        }
     }
 
     private var profileInitial: String {
@@ -159,5 +178,4 @@ struct SidebarView: View {
     private func focusOn(_ coordinate: CLLocationCoordinate2D) {
         NotificationCenter.default.post(name: .focusMapOnLocation, object: coordinate)
     }
-
 }

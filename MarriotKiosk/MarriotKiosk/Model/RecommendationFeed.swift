@@ -42,7 +42,7 @@ struct RecommendationFeed: Decodable {
 // MARK: - Loader
 func loadRecommendations() -> RecommendationFeed? {
     guard let url = Bundle.main.url(forResource: "recommendations_MB789456123", withExtension: "json") else {
-        print("❌ Recommendations JSON not found in bundle.")
+        print(" Recommendations JSON not found in bundle.")
         return nil
     }
 
@@ -51,10 +51,10 @@ func loadRecommendations() -> RecommendationFeed? {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         let feed = try decoder.decode(RecommendationFeed.self, from: data)
-        print("✅ Loaded \(feed.recommendations.keys.count) recommendation categories")
+        print(" Loaded \(feed.recommendations.keys.count) recommendation categories")
         return feed
     } catch {
-        print("❌ Failed to decode recommendations:", error)
+        print(" Failed to decode recommendations:", error)
         return nil
     }
 }

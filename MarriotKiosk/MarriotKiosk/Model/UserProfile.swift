@@ -17,6 +17,7 @@ struct UserProfile: Decodable, Identifiable {
     let memberSince: Date
     let travelPreferences: TravelPreferences
 
+
     struct TravelPreferences: Codable {
         let travelStyle: String
         let interests: [String]
@@ -34,7 +35,7 @@ struct UserProfile: Decodable, Identifiable {
         case wellness_preferences
     }
 
-    private struct DiningPreferences: Codable {
+    struct DiningPreferences: Codable {
         let diningStyle: String?
         let cuisinePreferences: [String]?
     }
@@ -59,7 +60,7 @@ struct UserProfile: Decodable, Identifiable {
         tier = (try? c.decode(String.self, forKey: .elite_status)) ?? "Member"
         bonvoyPoints = UInt((try? c.decode(Int.self, forKey: .points_balance)) ?? 0)
 
-        // 🧠 Strict date decode: YYYY-MM-DD only
+        // 🧠Strict date decode: YYYY-MM-DD only
         let dateString = try c.decode(String.self, forKey: .member_since)
         guard let parsed = DateFormatter.yyyyMMdd.date(from: dateString) else {
             throw DecodingError.dataCorrupted(.init(
@@ -99,7 +100,7 @@ extension DateFormatter {
 
 func loadUserProfile() -> UserProfile? {
     guard let url = Bundle.main.url(forResource: "UserData", withExtension: "json") else {
-        print("❌ JSON not found in bundle.")
+        print(" JSON not found in bundle.")
         return nil
     }
 
@@ -108,10 +109,10 @@ func loadUserProfile() -> UserProfile? {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .formatted(.yyyyMMdd)
         let profile = try decoder.decode(UserProfile.self, from: data)
-        print("✅ Loaded user \(profile.name)")
+        print(" Loaded user \(profile.name)")
         return profile
     } catch {
-        print("❌ Decode failed:", error)
+        print(" Decode failed:", error)
         return nil
     }
 }
